@@ -19,19 +19,19 @@ public class HidingSpot : MonoBehaviour
         {
             if (canHide && !hidden)
             {
+                audioSource.Play();
                 inputText1.SetActive(false);
                 player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY
                     | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
                 player.GetComponent<Collider>().enabled = false;
-                audioSource.Play();
                 StartCoroutine(FadeToBlackAndHidePlayer());
                 hidden = true;
                 canHide = false;
             }
             else if (hidden)
             {
-                inputText2.SetActive(false);
                 audioSource.Play();
+                inputText2.SetActive(false);
                 StartCoroutine(FadeToBlackAndShowPlayer());
                 player.GetComponent<Collider>().enabled = true;
                 player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX
