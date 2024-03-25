@@ -26,6 +26,7 @@ public class HidingSpot : MonoBehaviour
                 audioSource.Play();
                 StartCoroutine(FadeToBlackAndHidePlayer());
                 hidden = true;
+                canHide = false;
             }
             else if (hidden)
             {
@@ -36,8 +37,15 @@ public class HidingSpot : MonoBehaviour
                 player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX
                     | RigidbodyConstraints.FreezeRotationZ;
                 hidden = false;
+                canHide = true;
             }
         }
+
+        if (canHide)
+        {
+            inputText1.SetActive(true);
+        }
+        
 
         if (hidden)
         {
@@ -116,13 +124,12 @@ public class HidingSpot : MonoBehaviour
         {
             canHide = true;
             player = other.gameObject;
-            inputText1.SetActive(true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         canHide = false;
-        inputText1.SetActive(false);  
+        inputText1.SetActive(false);    
     }
 }
