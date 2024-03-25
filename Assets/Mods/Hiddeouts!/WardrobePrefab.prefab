@@ -345,6 +345,8 @@ MonoBehaviour:
   hidden: 0
   player: {fileID: 0}
   audioSource: {fileID: 4600233379518131494}
+  inputText: {fileID: 0}
+  screenCover: {fileID: 0}
 --- !u!82 &4600233379518131494
 AudioSource:
   m_ObjectHideFlags: 0
@@ -357,13 +359,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a24cdfc2b79dba142af1fa9f363ce16e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.68
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 140
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -401,7 +403,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
